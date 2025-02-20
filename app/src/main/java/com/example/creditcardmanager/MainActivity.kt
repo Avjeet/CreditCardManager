@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CreditCardManagerTheme {
-                   TabNavigationApp()
+                   MainGraph()
             }
         }
     }
@@ -45,10 +45,17 @@ fun OtherTextScreen() {
 sealed class Screen(val route: String) {
     object TabOne : Screen("tabOne")
     object TabTwo : Screen("tabTwo")
+    object TabThree : Screen("tabThree")
+}
+
+sealed class MainScreen(val route: String) {
+    object ScreenOne : MainScreen("screenOne")
+    object ScreenTwo : MainScreen("screenTwo")
+    object OnboardingScreen: MainScreen("onboardingScreen")
 }
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewTabNavigationApp() {
-    TabNavigationApp()
+    MainGraph()
 }

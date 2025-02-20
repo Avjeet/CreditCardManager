@@ -5,13 +5,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.creditcardmanager.ui.theme.ChatScreen
 
 @Composable
-fun TabNavigationApp() {
+fun TabNavigationApp(
+    mainNavController: NavController
+) {
     val navController = rememberNavController()  // Create Navigation Controller
 
     Scaffold(
@@ -33,6 +37,14 @@ fun TabNavigationApp() {
                 // Tab 2 - Some other text screen
                 CardRankScreen()
             }
+            composable(Screen.TabThree.route) {
+                MyCards { name ->
+                    mainNavController.navigate(
+                        "${MainScreen.ScreenTwo.route}/$name"
+                    )
+                }
+            }
+
         }
     }
 }

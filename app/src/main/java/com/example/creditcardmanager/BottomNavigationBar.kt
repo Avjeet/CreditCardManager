@@ -6,6 +6,7 @@ import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,6 +32,14 @@ fun BottomNavigationBar(navController: NavController) {
             selected = false,
             onClick = {
                 navController.navigate(Screen.TabTwo.route)
+            }
+        )
+        BottomNavigationItem(
+            icon = { Icon(Icons.Filled.Menu, contentDescription = "CC") },
+            label = { Text("Tab 3") },
+            selected = false,
+            onClick = {
+                navController.navigate(Screen.TabThree.route)
             }
         )
     }

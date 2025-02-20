@@ -1,7 +1,7 @@
 package com.example.creditcardmanager
 
 
-data class ChatRequest(val userMessage: String)
+data class ChatRequest(val input: String)
 
 data class ChatResponse(val content: String)
 

@@ -11,16 +11,19 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
     BottomNavigation(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
+        backgroundColor = Color.DarkGray, // Change to your preferred color
+        contentColor = Color.White
     ) {
         BottomNavigationItem(
             icon = { Icon(Icons.Filled.Home, contentDescription = "Home") },
-            label = { Text("Tab 1") },
+            label = { Text("Home") },
             selected = false,
             onClick = {
                 navController.navigate(Screen.TabOne.route)
@@ -28,7 +31,7 @@ fun BottomNavigationBar(navController: NavController) {
         )
         BottomNavigationItem(
             icon = { Icon(Icons.Filled.Settings, contentDescription = "Settings") },
-            label = { Text("Tab 2") },
+            label = { Text("Category") },
             selected = false,
             onClick = {
                 navController.navigate(Screen.TabTwo.route)
@@ -36,7 +39,7 @@ fun BottomNavigationBar(navController: NavController) {
         )
         BottomNavigationItem(
             icon = { Icon(Icons.Filled.Menu, contentDescription = "CC") },
-            label = { Text("Tab 3") },
+            label = { Text(" Cards") },
             selected = false,
             onClick = {
                 navController.navigate(Screen.TabThree.route)

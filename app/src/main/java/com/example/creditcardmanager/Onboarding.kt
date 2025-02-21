@@ -1,5 +1,6 @@
 package com.example.creditcardmanager
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
@@ -47,11 +49,14 @@ fun OnboardingScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .background(Color.Black)
+            .padding(16.dp)
+            .padding(top = 30.dp)
+        ,
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         // Credit Card Dropdown
-        Text(text = "Select Credit Card", fontWeight = FontWeight.Bold)
+        Text(text = "+ Add Credit Card", fontWeight = FontWeight.Bold, color = Color.White)
         Box {
             Button(onClick = { expanded = true }) {
                 Text("Choose Credit Card")
@@ -79,16 +84,16 @@ fun OnboardingScreen(
                     .padding(8.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(text = card, modifier = Modifier.weight(1f))
+                Text(text = card, modifier = Modifier.weight(1f), color = Color.White)
                 IconButton(onClick = { selectedCards = selectedCards - card }) {
-                    Icon(imageVector = Icons.Default.Delete, contentDescription = "Remove Card")
+                    Icon(imageVector = Icons.Default.Delete, contentDescription = "Remove Card", tint = Color.White)
                 }
             }
         }
 
         var expanded by remember { mutableStateOf(false) }
 
-        Text(text = "Select Income")
+        Text(text = "Select Income", color = Color.White)
         Box {
             Button(onClick = { expanded = true }) {
                 Text(selectedIncome)

@@ -21,7 +21,7 @@ fun MainGraph() {
         NavHost(
             navController = mainNavController,
             startDestination = MainScreen.OnboardingScreen.route,
-            modifier = Modifier.padding(innerPadding)
+            modifier = Modifier.padding( bottom = innerPadding.calculateBottomPadding())
         ) {
             composable(MainScreen.ScreenOne.route) {
                 TabNavigationApp(mainNavController)

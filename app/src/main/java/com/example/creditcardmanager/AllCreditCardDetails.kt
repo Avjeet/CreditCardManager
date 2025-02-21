@@ -141,6 +141,37 @@ object AllCreditCardDetails {
                 "5% cashback on movie & grocery spends",
                 "Accelerated reward points on travel"
             )
+        ),
+        CreditCardDetail(
+            "Premium_Bank_Platinum",
+            "Platinum Card",
+            "Credit Card",
+            "$99",
+            "$10,000",
+            "Yes",
+            "12%",
+            listOf("5% Cashback", "Airport Lounge Access")
+        ),
+        CreditCardDetail(
+            "Elite_Gold_Rewards",
+            "Gold Rewards Card",
+            "Credit Card",
+            "$79",
+            "$7,500",
+            "Yes",
+            "14%",
+            listOf("2x Points on Dining", "Travel Insurance")
+        ),
+        CreditCardDetail(
+            "Silver_Cashback_Plus",
+            "Cashback Card",
+            "Credit Card",
+            "$49",
+            "$5,000",
+            "No",
+            "16%",
+            listOf("1.5% Cashback", "No Annual Fee First Year")
         )
+
     )
 }

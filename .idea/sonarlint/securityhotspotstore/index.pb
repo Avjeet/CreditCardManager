@@ -27,3 +27,5 @@ w
 Gapp/src/main/java/com/example/creditcardmanager/AllCreditCardDetails.kt,6/1/61383ed7ce56a0fcd177b71c8e835bc98314b79f
 m
 =app/src/main/java/com/example/creditcardmanager/Onboarding.kt,4/3/43eac25bd7b8d071f6816fbfe7cae347a998b89b
+q
+Aapp/src/main/java/com/example/creditcardmanager/CardRankScreen.kt,d/f/df5b80678e0fd6b6a5e811701705cb8561594444

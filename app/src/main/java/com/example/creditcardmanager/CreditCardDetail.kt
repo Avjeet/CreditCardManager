@@ -11,5 +11,6 @@ data class CreditCardDetail(
     val creditLimit: String,
     val fuelSurchargeWaiver: String,
     val interestRate: String,
-    val offers: List<String>
+    val offers: List<String>,
+    val url: String
 )

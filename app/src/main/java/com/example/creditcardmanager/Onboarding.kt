@@ -33,7 +33,8 @@ import androidx.compose.ui.unit.dp
 
 data class UserSelection(
     val selectedCards: List<String>,
-    val selectedIncome: String
+    val selectedIncome: String,
+    val esteemedSpending: String
 )
 
 @Composable
@@ -41,27 +42,30 @@ fun OnboardingScreen(
     onSubmit: (UserSelection) -> Unit
 ) {
     val incomeOptions = listOf("Below 3L", "3L-6L", "6L-10L", "10L+")
+    val spendingOptions = listOf("Below 1L", "1L-3L", "3L-6L", "6L+")
 
     var selectedIncome by remember { mutableStateOf(incomeOptions.first()) }
+    var selectedSpending by remember { mutableStateOf(spendingOptions.first()) }
     var selectedCards by remember { mutableStateOf(emptyList<String>()) }
-    var expanded by remember { mutableStateOf(false) }
+    var cardDropdownExpanded by remember { mutableStateOf(false) }
+    var incomeDropdownExpanded by remember { mutableStateOf(false) }
+    var spendingDropdownExpanded by remember { mutableStateOf(false) }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)
             .padding(16.dp)
-            .padding(top = 30.dp)
-        ,
+            .padding(top = 30.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         // Credit Card Dropdown
-        Text(text = "+ Add Credit Card", fontWeight = FontWeight.Bold, color = Color.White)
+        Text(text = "Choose Credit Card", fontWeight = FontWeight.Bold, color = Color.White)
         Box {
-            Button(onClick = { expanded = true }) {
-                Text("Choose Credit Card")
+            Button(onClick = { cardDropdownExpanded = true }) {
+                Text("+ Add Credit Card")
             }
-            DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            DropdownMenu(expanded = cardDropdownExpanded, onDismissRequest = { cardDropdownExpanded = false }) {
                 AllCreditCardDetails.allCcDetails.forEach { card ->
                     DropdownMenuItem(
                         text = { Text(card.title) },
@@ -69,7 +73,7 @@ fun OnboardingScreen(
                             if (!selectedCards.contains(card.name)) {
                                 selectedCards = selectedCards + card.name
                             }
-                            expanded = false
+                            cardDropdownExpanded = false
                         }
                     )
                 }
@@ -91,20 +95,38 @@ fun OnboardingScreen(
             }
         }
 
-        var expanded by remember { mutableStateOf(false) }
-
+        // Select Income
         Text(text = "Select Income", color = Color.White)
         Box {
-            Button(onClick = { expanded = true }) {
+            Button(onClick = { incomeDropdownExpanded = true }) {
                 Text(selectedIncome)
             }
-            DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            DropdownMenu(expanded = incomeDropdownExpanded, onDismissRequest = { incomeDropdownExpanded = false }) {
                 incomeOptions.forEach { income ->
                     DropdownMenuItem(
                         text = { Text(income) },
                         onClick = {
                             selectedIncome = income
-                            expanded = false // Close dropdown after selection
+                            incomeDropdownExpanded = false
+                        }
+                    )
+                }
+            }
+        }
+
+        // Select Esteemed Spending
+        Text(text = "Select Esteemed Spending", color = Color.White)
+        Box {
+            Button(onClick = { spendingDropdownExpanded = true }) {
+                Text(selectedSpending)
+            }
+            DropdownMenu(expanded = spendingDropdownExpanded, onDismissRequest = { spendingDropdownExpanded = false }) {
+                spendingOptions.forEach { spending ->
+                    DropdownMenuItem(
+                        text = { Text(spending) },
+                        onClick = {
+                            selectedSpending = spending
+                            spendingDropdownExpanded = false
                         }
                     )
                 }
@@ -116,7 +138,8 @@ fun OnboardingScreen(
             onClick = {
                 val userSelection = UserSelection(
                     selectedCards = selectedCards,
-                    selectedIncome = selectedIncome
+                    selectedIncome = selectedIncome,
+                    esteemedSpending = selectedSpending
                 )
                 println("Saved: $userSelection") // Handle saving logic
                 onSubmit(userSelection)

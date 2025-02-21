@@ -1,5 +1,9 @@
 package com.example.creditcardmanager
 
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,10 +17,12 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -27,9 +33,10 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun CardScreen(creditCardDetail: CreditCardDetail?) {
-    if(creditCardDetail == null) {
+    if (creditCardDetail == null) {
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier
+                .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -44,13 +51,21 @@ fun CardScreen(creditCardDetail: CreditCardDetail?) {
 @Composable
 fun CreditCardDetailsScreen(creditCardDetail: CreditCardDetail) {
     Scaffold(
+        modifier = Modifier
+            .background(Color.Black),
         topBar = {
-            TopAppBar(title = { Text("Credit Card Details") })
+            TopAppBar(
+                title = { Text("Credit Card Details", color = Color.White) },
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = Color.Black// Dark gray background
+                )
+            )
         }
     ) { innerPadding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .background(Color.Black)
                 .padding(innerPadding)
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
@@ -73,7 +88,12 @@ fun CreditCardInfoCard(creditCardDetail: CreditCardDetail) {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             // Card Header
-            Text(creditCardDetail.title, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(
+                creditCardDetail.title,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
 
             // Details
             CardDetailRow("Card Type", creditCardDetail.type)
@@ -89,6 +109,17 @@ fun CreditCardInfoCard(creditCardDetail: CreditCardDetail) {
                 color = Color.White
             )
             CashbackOffersList(creditCardDetail.offers)
+            val context = LocalContext.current
+            Text(
+                text = "Apply Now", fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                modifier = Modifier
+                    .clickable {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(creditCardDetail.url))
+                        context.startActivity(intent)
+                    }
+            )
 
         }
     }

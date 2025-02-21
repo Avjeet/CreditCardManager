@@ -1,7 +1,11 @@
 
-]kotlin:S1128	"Remove this unused import.(ÏõÁŞşÿÿÿÿJ$6c9a4335-793a-4ead-a6c8-33df4c982942
-œkotlin:S1192"WDefine a constant instead of duplicating this literal "â‚¹1,500 Minimum Spend" 6 times.(ƒ»­Ó8áô®¹Ò2J$b785582d-55b3-4f8f-a9b0-380f6e33e95c
-œkotlin:S1192"WDefine a constant instead of duplicating this literal "â‚¹1,000 Minimum Spend" 5 times.(Ş©¿é8áô®¹Ò2J$6b39f147-bb49-4238-81d6-23ec4eccffb1
-›kotlin:S1192"QDefine a constant instead of duplicating this literal "No Minimum Spend" 8 times.(Ë¯Ï’ÿÿÿÿÿ8áô®¹Ò2J$c1a78025-4925-4212-8160-cb7924c2068a
-¡kotlin:S1192"WDefine a constant instead of duplicating this literal "â‚¹2,000 Minimum Spend" 5 times.(ªşÍıÿÿÿÿ8áô®¹Ò2J$876ad518-c5d4-4992-ab28-343c5b6b1a0d
-¡kotlin:S1192"WDefine a constant instead of duplicating this literal "â‚¹2,500 Minimum Spend" 3 times.(¯‚û´ÿÿÿÿÿ8áô®¹Ò2J$2c7072c6-bea4-4d17-97d7-074c72cc2ff9
+]kotlin:S1128"Remove this unused import.(ÏõÁŞşÿÿÿÿJ$447c6a34-d4a8-4216-a425-eb761164f282
+œkotlin:S1192"WDefine a constant instead of duplicating this literal "â‚¹1,500 Minimum Spend" 6 times.(†äª¼8¸Ùó¹Ò2J$01a9f397-28d0-42a2-8ad3-ea4f2054ce2c
+Ÿkotlin:S1192"ZDefine a constant instead of duplicating this literal "https://www.icicibank.com" 5 times.(ÉÈñê8¹Ùó¹Ò2J$5650ad19-9399-4fa6-8dac-56a3fbb64500
+¡kotlin:S1192"WDefine a constant instead of duplicating this literal "â‚¹1,000 Minimum Spend" 5 times.(Í¸ò´úÿÿÿÿ8¹Ùó¹Ò2J$b94052ad-c7a3-4242-903c-0b20cc4369ea
+£kotlin:S1192"YDefine a constant instead of duplicating this literal "https://www.hdfcbank.com" 8 times.(Í¸ò´úÿÿÿÿ8¹Ùó¹Ò2J$3465a7a1-9dfe-4c8b-a587-0222255aa3a3
+–kotlin:S1192"QDefine a constant instead of duplicating this literal "No Minimum Spend" 8 times.(ÓÜºÅ8¹Ùó¹Ò2J$acfa352e-eb64-479b-9f03-64203c160d5f
+›kotlin:S1192"VDefine a constant instead of duplicating this literal "https://www.sbi.co.in" 6 times.(ÓÜºÅ8¹Ùó¹Ò2J$b2e3d076-4527-47d4-b1c6-d380488b032e
+£kotlin:S1192"YDefine a constant instead of duplicating this literal "https://www.axisbank.com" 6 times.(„Ÿ‚şÿÿÿÿ8ºÙó¹Ò2J$b64f588b-8da4-4680-915e-53ac0896ecd0
+¡kotlin:S1192!"WDefine a constant instead of duplicating this literal "â‚¹2,000 Minimum Spend" 5 times.(¾”´šûÿÿÿÿ8ºÙó¹Ò2J$58917536-01f0-42f9-828b-6f6b45a84265
+¡kotlin:S1192""WDefine a constant instead of duplicating this literal "â‚¹2,500 Minimum Spend" 3 times.(©£‰Íıÿÿÿÿ8ºÙó¹Ò2J$93eafcec-318e-4abf-a4d2-9856d63e4b67

@@ -24,7 +24,8 @@ object AllCreditCardDetails {
                 "2% on Amazon Pay partner merchants",
                 "20% cashback on electricity bill",
                 "EazyDiner Prime membership"
-            )
+            ),
+            url = "https://www.icicibank.com/credit-cards/amazon-pay"
         ),
         CreditCardDetail(
             name = "Axis_Airtel",
@@ -39,7 +40,8 @@ object AllCreditCardDetails {
                 "10% cashback on utility bills (max ₹250/month)",
                 "10% cashback on Swiggy/Zomato/BigBasket (max ₹500/month)",
                 "20% dining discount at partner restaurants"
-            )
+            ),
+            url = "https://www.axisbank.com/retail/cards/credit-card/axis-airtel-credit-card"
         ),
         CreditCardDetail(
             name = "IDFC_First_Wow",
@@ -55,7 +57,8 @@ object AllCreditCardDetails {
                 "Buy 1 Get 1 Movie Ticket Offer",
                 "Airport Spa services (30 min)",
                 "4 Railway lounge visits per quarter"
-            )
+            ),
+            url = "https://www.idfcfirstbank.com/credit-cards/wow-credit-card"
         ),
         CreditCardDetail(
             name = "HDFC_Regalia",
@@ -70,7 +73,8 @@ object AllCreditCardDetails {
                 "5x reward points on international spends",
                 "2x reward points on dining & travel",
                 "1% fuel surcharge waiver"
-            )
+            ),
+            url = "https://www.hdfcbank.com/personal/pay/cards/credit-cards/regalia-credit-card"
         ),
         CreditCardDetail(
             name = "SBI_Prime",
@@ -84,7 +88,8 @@ object AllCreditCardDetails {
                 "10x reward points on movies & dining",
                 "Complimentary Club Vistara Silver Membership",
                 "Free domestic lounge access"
-            )
+            ),
+            url = "https://www.sbicard.com/en/personal/credit-cards/rewards/sbi-prime-card.page"
         ),
         CreditCardDetail(
             name = "AMEX_Membership",
@@ -98,7 +103,8 @@ object AllCreditCardDetails {
                 "1000 bonus points on transactions over Rs. 1000 (4 times/month)",
                 "Fuel surcharge waiver at HPCL outlets",
                 "Exclusive travel & dining offers"
-            )
+            ),
+            url = "https://www.americanexpress.com/in/credit-cards/membership-rewards-card/"
         ),
         CreditCardDetail(
             name = "BOB_Eterna",
@@ -112,7 +118,8 @@ object AllCreditCardDetails {
                 "10x reward points on travel, dining & online spends",
                 "Free domestic & international lounge access",
                 "1% fuel surcharge waiver"
-            )
+            ),
+            url = "https://www.bobfinancial.com/eterna-credit-card.jsp"
         ),
         CreditCardDetail(
             name = "Kotak_811",
@@ -126,7 +133,8 @@ object AllCreditCardDetails {
                 "2.5% cashback on online spends",
                 "5% cashback on Kotak partner brands",
                 "Free railway lounge access"
-            )
+            ),
+            url = "https://www.kotak.com/en/personal-banking/cards/credit-cards/kotak-811-credit-card.html"
         ),
         CreditCardDetail(
             name = "YES_Bank_Premia",
@@ -140,37 +148,41 @@ object AllCreditCardDetails {
                 "6 domestic lounge visits per year",
                 "5% cashback on movie & grocery spends",
                 "Accelerated reward points on travel"
-            )
+            ),
+            url = "https://www.yesbank.in/personal-banking/cards/credit-cards/yes-premia-credit-card"
         ),
         CreditCardDetail(
-            "Premium_Bank_Platinum",
-            "Platinum Card",
-            "Credit Card",
-            "$99",
-            "$10,000",
-            "Yes",
-            "12%",
-            listOf("5% Cashback", "Airport Lounge Access")
+            name = "Premium_Bank_Platinum",
+            title = "Platinum Card",
+            type = "Credit Card",
+            annualFee = "$99",
+            creditLimit = "$10,000",
+            fuelSurchargeWaiver = "Yes",
+            interestRate = "12%",
+            offers = listOf("5% Cashback", "Airport Lounge Access"),
+            url = "https://www.premiumbank.com/platinum-card"
         ),
         CreditCardDetail(
-            "Elite_Gold_Rewards",
-            "Gold Rewards Card",
-            "Credit Card",
-            "$79",
-            "$7,500",
-            "Yes",
-            "14%",
-            listOf("2x Points on Dining", "Travel Insurance")
+            name = "Elite_Gold_Rewards",
+            title = "Gold Rewards Card",
+            type = "Credit Card",
+            annualFee = "$79",
+            creditLimit = "$7,500",
+            fuelSurchargeWaiver = "Yes",
+            interestRate = "14%",
+            offers = listOf("2x Points on Dining", "Travel Insurance"),
+            url = "https://www.elitebank.com/gold-rewards-card"
         ),
         CreditCardDetail(
-            "Silver_Cashback_Plus",
-            "Cashback Card",
-            "Credit Card",
-            "$49",
-            "$5,000",
-            "No",
-            "16%",
-            listOf("1.5% Cashback", "No Annual Fee First Year")
+            name = "Silver_Cashback_Plus",
+            title = "Cashback Card",
+            type = "Credit Card",
+            annualFee = "$49",
+            creditLimit = "$5,000",
+            fuelSurchargeWaiver = "No",
+            interestRate = "16%",
+            offers = listOf("1.5% Cashback", "No Annual Fee First Year"),
+            url = "https://www.silverbank.com/cashback-card"
         )
 
     )

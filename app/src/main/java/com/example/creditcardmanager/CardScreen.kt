@@ -79,7 +79,7 @@ fun CreditCardDetailsScreen(creditCardDetail: CreditCardDetail) {
 fun CreditCardInfoCard(creditCardDetail: CreditCardDetail) {
     Card(
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF1E88E5)), // Blue background
+        colors = CardDefaults.cardColors(containerColor = Color.Black), // Blue background
         modifier = Modifier.fillMaxWidth(
         )
     ) {
@@ -110,16 +110,16 @@ fun CreditCardInfoCard(creditCardDetail: CreditCardDetail) {
             )
             CashbackOffersList(creditCardDetail.offers)
             val context = LocalContext.current
-            Text(
-                text = "Apply Now", fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White,
-                modifier = Modifier
-                    .clickable {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(creditCardDetail.url))
-                        context.startActivity(intent)
-                    }
-            )
+//            Text(
+//                text = "Apply Now", fontSize = 16.sp,
+//                fontWeight = FontWeight.Bold,
+//                color = Color.White,
+//                modifier = Modifier
+//                    .clickable {
+//                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(creditCardDetail.url))
+//                        context.startActivity(intent)
+//                    }
+//            )
 
         }
     }

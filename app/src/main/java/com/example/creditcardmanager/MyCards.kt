@@ -1,5 +1,7 @@
 package com.example.creditcardmanager
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -21,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -78,8 +81,14 @@ fun MyCards(onCardClick: (String) -> Unit = {}) {
             DashedLine()
         }
         items(recommendedCards) { cardName ->
+            val context = LocalContext.current
             CreditCardItem(cardName) { name ->
-                onCardClick(map[name] ?: "")
+//                onCardClick(map[name] ?: "")
+                val url = AllCreditCardDetails.allCcDetails.firstOrNull { it.name == map[name] }?.url
+                url?.let {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    context.startActivity(intent)
+                }
             }
         }
     }
